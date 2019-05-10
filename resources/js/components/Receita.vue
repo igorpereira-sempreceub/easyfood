@@ -5,7 +5,7 @@
             v-for="(receita, index_receita) in receitasFiltradas"
             :key="index_receita"
         >
-            <div class="card-header subtitle">{{ receita.nome }}</div>
+            <div class="card-header subtitle" style="backgroundcolor: ">{{ receita.nome }}</div>
             <div class="card-body">
                 <div class="card" v-for="(secao, index_secao) in receita.secao" :key="index_secao">
                     <div class="card-header">{{ secao.nome }}</div>
@@ -37,13 +37,13 @@ export default {
         },
         receitasFiltradas() {
             return this.receitas.filter(rec => {
-                // return rec;
-                return this.filtros.forEach(fil => {
-                    if (rec.secao[0].conteudo.includes(fil.nome)) {
-                        console.log(rec.secao[0].conteudo.includes(fil.nome));
-                        return rec;
-                    }
-                });
+                return rec;
+                // return this.filtros.forEach(fil => {
+                //     if (rec.secao[0].conteudo.includes(fil.nome)) {
+                //         console.log(rec.secao[0].conteudo.includes(fil.nome));
+                //         return rec;
+                //     }
+                // });
             });
         }
     }
