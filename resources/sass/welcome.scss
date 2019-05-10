@@ -1,0 +1,42 @@
+html,
+body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: "Nunito", sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.title {
+    font-size: 84px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 100%;
+}
