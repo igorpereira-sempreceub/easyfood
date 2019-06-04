@@ -2,19 +2,25 @@
     <div>
         <div
             class="card mb-2"
-            v-for="(receita, index_receita) in receitasFiltradas"
+            v-for="(receita, index_receita) in listaFiltrada"
             :key="index_receita"
         >
             <div class="card-header subtitle" style="backgroundcolor: ">{{ receita.nome }}</div>
             <div class="card-body">
-                <div class="card" v-for="(secao, index_secao) in receita.secao" :key="index_secao">
-                    <div class="card-header">{{ secao.nome }}</div>
+                <div
+                    class="card mb-1"
+                    v-for="(secao, index_secao) in receita.secao"
+                    :key="index_secao"
+                >
+                    <div class="card-header text-white bg-dark">{{ secao.nome }}</div>
                     <div class="card-body">
                         <ul>
-                            <li
+                            <span
                                 v-for="(conteudo, index_conteudo) in secao.conteudo"
                                 :key="index_conteudo"
-                            >{{ conteudo }}</li>
+                            >
+                                <li v-if="conteudo.trim().length > 0">{{ conteudo.trim() }}</li>
+                            </span>
                         </ul>
                     </div>
                 </div>
@@ -28,7 +34,8 @@ export default {
     props: ["receitas"],
     data() {
         return {
-            listaDeReceitas: []
+            listaDeReceitas: [],
+            listaFiltrada: []
         };
     },
     computed: {
@@ -36,14 +43,20 @@ export default {
             return this.$store.state.filtros;
         },
         receitasFiltradas() {
-            return this.receitas.filter(rec => {
-                return rec;
-                // return this.filtros.forEach(fil => {
-                //     if (rec.secao[0].conteudo.includes(fil.nome)) {
-                //         console.log(rec.secao[0].conteudo.includes(fil.nome));
-                //         return rec;
-                //     }
-                // });
+            this.listaFiltrada = [];
+
+            this.filtros.forEach(filtro => {
+                this.receitas.filter(rec => {
+                    rec.secao[0].conteudo.forEach(ing => {
+                        if (
+                            ing
+                                .toLowerCase()
+                                .indexOf(filtro.nome.toLowerCase()) > -1
+                        ) {
+                            this.listaFiltrada.push(rec);
+                        }
+                    });
+                });
             });
         }
     }

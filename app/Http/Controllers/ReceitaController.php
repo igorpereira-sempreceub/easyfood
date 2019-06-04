@@ -15,7 +15,8 @@ class ReceitaController extends Controller
      */
     public function index()
     {
-        $receitas = Receita::take(100)->get();
+        // $receitas = Receita::take(100)->get();
+        $receitas = Receita::all();
         $ingredientes = Ingrediente::all();
         return view('welcome', compact('receitas', 'ingredientes'));
     }

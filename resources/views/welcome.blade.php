@@ -29,18 +29,18 @@
         </p>
         <br> <br> <br>
         <ingrediente :ingredientes="{{ $ingredientes }}"></ingrediente>
-        <br><br><br>
+        <!-- <br><br><br>
         <h1 class="display-4 text-center">Deu Match!</h1>
         <br>
         <p class="lead text-center">
             Encontramos três receitas que utilizam os seus ingredientes!
-        </p>
-        <br><br>
+        </p> -->
+        <!-- <br><br> -->
 
 
         <div class="container" id="resultadoPesquisa">
             <!--resultado-->
-            <div class="card-group">
+            <!-- <div class="card-group">
                 <div class="card mb-2">
                     <img class="card-img-top" src="images/arrozpiamontese.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -65,7 +65,7 @@
                         <p class="card-text"><small class="text-muted">22 pessoas gostaram dessa receita</small></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <receita :receitas="{{ $receitas }}"></receita>
         </div>
 
