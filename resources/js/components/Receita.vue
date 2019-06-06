@@ -19,12 +19,14 @@
         </div>
         <div class="row">
             <div class="col">
-                <span
-                    v-if="listaFiltrada.length == 0"
-                >{{ "São " + receitas.length + " receitas para pesquisar!"}}</span>
-                <span
-                    v-else
-                >{{ "São " + listaFiltrada.length + " receitas com os ingredientes selecionados!"}}</span>
+                <center class="mb-2">
+                    <span
+                        v-if="listaFiltrada.length == 0"
+                    >{{ "São " + receitas.length + " receitas para pesquisar!"}}</span>
+                    <span
+                        v-else
+                    >{{ "São " + listaFiltrada.length + " receitas com os ingredientes selecionados!"}}</span>
+                </center>
                 <div
                     class="card mb-2"
                     v-for="(receita, index_receita) in listaFiltrada"
