@@ -22,8 +22,10 @@
                 <span
                     v-if="listaFiltrada.length == 0"
                 >{{ "São " + receitas.length + " receitas para pesquisar!"}}</span>
-                <div
+                <span
                     v-else
+                >{{ "São " + listaFiltrada.length + " receitas com os ingredientes selecionados!"}}</span>
+                <div
                     class="card mb-2"
                     v-for="(receita, index_receita) in listaFiltrada"
                     :key="index_receita"
