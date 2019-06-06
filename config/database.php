@@ -93,16 +93,15 @@ return [
 
         'mongodb' => [
             'driver'   => 'mongodb',
-            // 'host'     => 'cluster0-lvvzc.azure.mongodb.net',
-            // 'port'     => env('MONGO_DB_PORT', 27017),
-            // 'database' => env('MONGO_DB_DATABASE'),
-            // 'username' => env('MONGO_DB_USERNAME'),
-            // 'password' => env('MONGO_DB_PASSWORD'),
-            'dsn' => 'mongodb+srv://vuejs_express:vqFxNT9Hvu4BmVK@cluster0-lvvzc.azure.mongodb.net/test?retryWrites=true&w=majority',
-            'database' => 'afrodite',
-            // 'options'  => [
-            //     'database' => 'afrodite'
-            // ]
+            'host'     => env('MONGO_DB_HOST', ''),
+            'port'     => env('MONGO_DB_PORT', ''),
+            'database' => env('MONGO_DB_DATABASE'),
+            'username' => env('MONGO_DB_USERNAME'),
+            'password' => env('MONGO_DB_PASSWORD'),
+            'dsn' => env('MONGO_DB_DSN', ''),
+            'options' => [
+                'database' => 'afrodite'
+            ]
         ],
 
     ],
